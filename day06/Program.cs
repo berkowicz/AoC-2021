@@ -1,11 +1,11 @@
-﻿namespace Day6
+﻿namespace day06
 {
     internal class Program
     {
         static void Main(string[] args)
         {
             //Input data
-            List<int> lanternFish = new List<int>() { 3, 4, 3, 1, 2 };
+            List<int> lanternFish = new List<int>() { 3, 4, 3, 1, 2, };
 
             //Counter for the total number of fish withing each daycycle
             long zeroDay = 0;
@@ -21,45 +21,41 @@
             //Sets the number of fishes within each daycycle from the input data
             foreach (int day in lanternFish)
             {
-                if (day == 0)
+                switch (day)
                 {
-                    zeroDay += 1;
-                }
-                else if (day == 1)
-                {
-                    oneDay += 1;
-                }
-                else if (day == 2)
-                {
-                    twoDay += 1;
-                }
-                else if (day == 3)
-                {
-                    threeDay += 1;
-                }
-                else if (day == 4)
-                {
-                    fourDay += 1;
-                }
-                else if (day == 5)
-                {
-                    fiveDay += 1;
-                }
-                else if (day == 6)
-                {
-                    sixDay += 1;
-                }
-                else if (day == 7)
-                {
-                    sevenDay += 1;
-                }
-                else if (day == 8)
-                {
-                    eightDay += 1;
+                    case 0:
+                        zeroDay += 1;
+                        break;
+                    case 1:
+                        oneDay += 1;
+                        break;
+                    case 2:
+                        twoDay += 1;
+                        break;
+                    case 3:
+                        threeDay += 1;
+                        break;
+                    case 4:
+                        fourDay += 1;
+                        break;
+                    case 5:
+                        fiveDay += 1;
+                        break;
+                    case 6:
+                        sixDay += 1;
+                        break;
+                    case 7:
+                        sevenDay += 1;
+                        break;
+                    case 8:
+                        eightDay += 1;
+                        break;
+                    default:
+                        break;
                 }
             }
             //Loops through the days
-            for (int i = 0; i < 256; i++)
+            for (int i = 0; i < 265; i++)
             {
                 //Temporary variables to shift value -1 day
                 long zeroTemp = oneDay;
@@ -85,6 +81,7 @@
             }
             long totalFish = zeroDay + oneDay + twoDay + threeDay + fourDay + fiveDay + sixDay + sevenDay + eightDay;
             Console.WriteLine(totalFish);
+            Console.ReadLine();
         }
     }
 }
